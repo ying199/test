@@ -8,9 +8,13 @@ spring:
   application:
     name: config-server-3344-dev
   profiles:
-    active: dev
-    
-    
+    active: dev   
+---
+spring:
+  application:
+    name: config-server-3344-tt
+  profiles:
+    active: tt    
 ---
 spring:
   application:
