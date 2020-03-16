@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: config-server-3344
+    
+    
+---
+spring:
+  application:
+    name: config-server-3344-dev
+  profiles:
+    active: dev
+    
+    
+---
+spring:
+  application:
+    name: config-server-3344-master
+  profiles:
+    active: master
