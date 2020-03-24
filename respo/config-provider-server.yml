@@ -1,1 +1,19 @@
 config-provider-server: config-provider-server-8001
+
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  application:
+    name: config-provider-server-8001-master
+  profiles:
+    active: pro
+    
+---
+spring:
+  application:
+    name: config-provider-server-8001-dev
+  profiles:
+    active: dev
