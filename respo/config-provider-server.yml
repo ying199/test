@@ -7,7 +7,6 @@ spring:
 server:
   port: 8001
 
-
 spring:
   profiles: dev
   application:
@@ -24,9 +23,34 @@ mybatis:
   type-aliases-package: com.gcloud.entity
   mapper-locations: classpath:mybatis/mapper/*.xml
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lhy.eureka1.com:7001/eureka,http://lhy.eureka2.com:7002/eureka
+      
+---
+
+server:
+  port: 8001
+
+spring:
+  profiles: pro
+  application:
+    name: provider-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/lhytest2?useUnicode=true&characterEncoding=UTF-8
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.gcloud.entity
+  mapper-locations: classpath:mybatis/mapper/*.xml
 
 eureka:
   client:
     service-url:
-      defaultZone: http://lhy.eureka1.com:7001/eureka
-      #s,http://lhy.eureka2.com:7002/eureka,http://lhy.eureka4.com:7004/eureka
+      defaultZone: http://lhy.eureka1.com:7001/eureka,http://lhy.eureka2.com:7002/eureka
+
