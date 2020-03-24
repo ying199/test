@@ -1,1 +1,41 @@
-foo: config-eureka-serer
+spring:
+  profiles: 
+    active: dev
+---
+foo: springcloud-eureka-server-7001-dev
+spring:
+  profiles: dev
+  application:
+    name: springcloud-eureka-server-7001
+
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: lhy.eureka1.com
+  client:
+    fetch-registry: false
+    #register-with-eureka: false
+    service-url:
+      defaultZone: http://lhy.eureka2.com:7002
+      
+      
+---
+foo: springcloud-eureka-server-7001-pro
+spring:
+  profiles: pro
+  application:
+    name: springcloud-eureka-server-7001
+
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: lhy.eureka1.com
+  client:
+    fetch-registry: false
+    #register-with-eureka: false
+    service-url:
+      defaultZone: http://lhy.eureka2.com:7002
