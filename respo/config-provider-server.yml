@@ -2,7 +2,7 @@ config-provider-server: config-provider-server-8001
 
 spring:
   profiles:
-    active: dev
+    active: pro
     
 ---
 server:
